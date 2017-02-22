@@ -1,0 +1,70 @@
+RewriteEngine On 
+RewriteRule ^client(|/)$ /client.php
+RewriteRule ^clientutils(|/)$ /client.php
+RewriteRule ^flash_client_error(|/)$ /client.php
+RewriteRule ^me(|/)$ /me.php
+RewriteRule ^Forgot(|/)$ /forgot.php
+RewriteRule ^maintenance(|/)$ /maintenance.php
+RewriteRule ^account/settings(|/)$ /settings.php
+RewriteRule ^community(|/)$ /community.php
+RewriteRule ^articles(|/)$ /articles.php
+RewriteRule ^articles/(..*)$ /articles.php?id=$1
+RewriteRule ^articles/(..*)$ /articles.php?p=$1
+RewriteRule ^community/staff(|/)$ /team.php
+RewriteRule ^Precios(|/)$ /precios.php
+RewriteRule ^Luck(|/)$ /luck.php
+RewriteRule ^community/alfas(|/)$ /alfas.php
+RewriteRule ^Referidos(|/)$ /referidos.php
+RewriteRule ^welcome/register(|/)$ /register.php
+RewriteRule ^home/(..*)$ /perfil.php?p=$1
+RewriteRule ^Tienda(|/)$ /store.php
+RewriteRule ^Tienda=ComprarPlacas(|/)$ /buybadges.php
+RewriteRule ^Tienda=ComprarVIP(|/)$ /buyvip.php
+RewriteRule ^Tienda=ComprarRares(|/)$ /buyrares.php
+RewriteRule ^Tienda=ComprarRespetos(|/)$ /buyresp.php
+RewriteRule ^cacheCheck(|/)$ /cacheCheck.php
+RewriteRule ^account/disconnected(|/)$ /index.php?logout=true
+RewriteRule ^logout/(|/)$ /index.php?logout=true
+RewriteRule ^Badgedata/badge/([^/]+)(|/)$ ./habbo-imaging/badge.php?badge=$1
+RewriteRule ^habbo-imaging/badge/([^/]+)(|/).gif$ ./habbo-imaging/badge.php?badge=$1
+RewriteRule ^habbo-imaging/badge/([^/]+)(|/)$ ./habbo-imaging/badge.php?badge=$1
+RewriteRule ^inc/(..*)$ ./index.php
+RewriteRule ^tpl/(..*)$ ./index.php
+RewriteRule ^tpl/Generic/(..*)$ ./index.php
+RewriteRule ^system(..*)$ ./index.php
+RewriteRule ^Files(..*)$ ./index.php
+RewriteRule ^tpl/Index/(..*)$ ./index.php
+RewriteRule ^tpl/Data/(..*)$ ./index.php
+RewriteRule ^habbo-imaging/avatarimage(|/)$ /habbo-imaging/avatar.php
+RewriteRule ^habbo-imaging/badge/(.*).gif$ ./habbo-imaging/badge.php?badge=$1
+RewriteRule ^habbo-imaging/badge/(.*).gif$ ./habbo-imaging/head.php?figure=$1
+RewriteRule ^Index(|/)$ /index.php
+RewriteRule ^forgot(|/)$ /forgot.php
+RewriteRule ^account/password/resetIdentity/9346b03cbb86c009501ce113cb38dce39ebba9c34a6416d8edef5ac544db7dddb5158bf4e86bc09c089a3ed7e87049f144888ef2b45e1a02986bdc8858d82ad0dd460/(|/)$ /forgot
+
+<Files *.css>
+SetOutputFilter DEFLATE
+</Files>
+<Files *.js>
+SetOutputFilter DEFLATE
+</Files>
+
+ErrorDocument 400 /404.php
+ErrorDocument 401 /404.php
+ErrorDocument 403 /404.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /404.php
+
+# BEGIN Compress text files - CMS by Forbi
+<ifModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+  AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+  AddOutputFilterByType DEFLATE font/truetype font/opentype
+  
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</ifModule>
+# END Compress text files - CMS by Forbi
+ 

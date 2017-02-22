@@ -1,0 +1,17 @@
+#index_badges input[type="radio"]{
+	border:2px solid #ccc;
+	margin-left:15px;
+    background-color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    position: relative;
+    width: 15px;
+    -webkit-appearance: none;
+	transition:.5s;
+}
+#index_badges input[type="radio"]:checked{
+	border:2px solid #c62828;
+	transition:.5s;
+}
